@@ -98,7 +98,7 @@ exports.updateSong = async (req, res) => {
 exports.deleteSong = async (req, res) => {
   try {
     const id = { _id: req.params.id };
-    const deleted = await Song.findByIdAndRemove(id);
+    const deleted = await Song.findByIdAndDelete(id);
 
     if (!deleted)
       return res.status(400).json({
